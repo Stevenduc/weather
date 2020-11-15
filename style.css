@@ -45,7 +45,7 @@ label {
 }
 
 #current, #forecast {
-    border: 1px solid lightgrey;
+    border: 1px solid rgba(231, 93, 93, 0.74);
     padding: 20px 20px 0px 20px;
     border-radius: 0px 0px 5px 5px;
 }
