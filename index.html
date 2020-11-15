@@ -1,11 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script src="script.js"></script>
-</body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="styles.css" type="text/CSS">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    
+    <title>Weather By City</title>
+  </head>
+  <body>
+    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Weather Dashboard</h1>
+        </div>
+    </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-3">
+            <ul class="nav mr-auto">
+            <li class="nav-item">
+                <form>
+                    
+                      <label for="keywords">Search for a City:</label>
+                      <input type="text" class="form-control" id="keywords" placeholder="Enter City Here">
+                    
+                    <button class="btn btn-primary btn-search"><i class="fas fa-search"></i></button>
+                </form>
+            </li>
+            </ul>
+        <ul class="nav flex-column mr-auto" id="search-history">
+            
+        </ul>
+        </div>
+    <div class="col">
+    <div class="search-results">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <button class="nav-link active" id='currentBtn' data-current="true">Current Weather</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" id='forecastBtn'>5-Day Forecast</button>
+            </li>
+        </ul>
+    <div id="current">
+        <h3> <span class="city"></span> 
+             <span id="currentDate"></span>
+             <img id="currentIcon" src="">  
+        </h3>
+        <p>
+           Temperature: <span id="currentTemp"></span> &#8457;
+        </p>
+        <p >Humidity: <span id="currentHumidity"></span>
+
+        </p>
+        <p >Wind Speed: <span id="currentWind"></span>
+
+        </p>
+        <p> UV Index: <span id="currentUV"></span>
+
+        </p>
+    </div>
+    </div>
+    <div id="forecast">
+        <div class="card-group">
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header card-title"><span class="date">
+
+            </span></div>
+            <div class="card-body">
+              <img class="icon">
+              <p class="card-text">Temp: <scan class="temperature">
+
+              </scan> &#8457;</p>
+              <p class="card-text"><scan class="humidity">
+                  
+            </scan> </p>
+            </div>
+        </div>
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header card-title"><span class="date">
+
+            </span></div>
+            <div class="card-body">
+              <img class="icon">
+              <p class="card-text">Temp: <scan class="temperature">
+
+              </scan> &#8457;</p>
+              <p class="card-text"><scan class="humidity">
+                  
+            </scan> </p>
+            </div>
+        </div>
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header card-title"><span class="date">
+
+            </span></div>
+            <div class="card-body">
+              <img class="icon">
+              <p class="card-text">Temp: <scan class="temperature">
+
+              </scan> &#8457;</p>
+              <p class="card-text"><scan class="humidity">
+                  
+            </scan> </p>
+            </div>
+        </div>
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header card-title"><span class="date">
+
+            </span></div>
+            <div class="card-body">
+                <img class="icon">
+              <p class="card-text">Temp: <scan class="temperature">
+
+              </scan> &#8457;</p>
+              <p class="card-text"><scan class="humidity">
+                  
+            </scan> </p>
+            </div>
+        </div>
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header card-title"><span class="date">
+
+            </span></div>
+            <div class="card-body">
+              <img class="icon">
+              <p class="card-text">Temp: <scan class="temperature">
+
+              </scan> &#8457;</p>
+              <p class="card-text"><scan class="humidity">
+                  
+            </scan> </p>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        
+    </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js" integrity="sha512-F+u8eWHrfY8Xw9BLzZ8rG/0wIvs0y+JyRJrXjp3VjtFPylAEEGwKbua5Ip/oiVhaTDaDs4eU2Xtsxjs/9ag2bQ==" crossorigin="anonymous"></script>
+    <script src="./javascript.js"></script>
+  </body>
 </html>
